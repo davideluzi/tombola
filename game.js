@@ -1,5 +1,6 @@
 let Card = require("./card.js");
 let Counter = require("./counter.js");
+let playerAudio = require('play-sound')(opts = {})
 //
 class Game {
     constructor() {
@@ -40,11 +41,17 @@ class Game {
             if (userComb && this.combinationsLeft.indexOf(userComb) > -1) {
                 this.combinationsLeft.splice(this.combinationsLeft.indexOf(userComb), 1);
                 console.log('>>>>>>>>>>>>>>>>>>>>>>>> Hai fatto ' + userComb)
+                playerAudio.play('ding.wav', function(err){
+                    if (err) throw err
+                })
             }
             let computerComb = this.computerCard.checkCombination(this.mainCounter.numbers)
             if (computerComb && this.combinationsLeft.indexOf(computerComb) > -1) {
                 this.combinationsLeft.splice(this.combinationsLeft.indexOf(computerComb), 1);
                 console.log('!!!!!!!!!!!!!!!!!!!!!!!! Il computer ha fatto ' + computerComb)
+                playerAudio.play('blong.wav', function(err){
+                    if (err) throw err
+                })
             }
         } else {
             console.log('\n> FINE DEL GIOCO');
