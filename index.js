@@ -1,4 +1,4 @@
-let Game = require("./game");
+let Game = require("./classes/game");
 // Init game
 let game = new Game();
 // Start game
