@@ -19,7 +19,7 @@ class Game {
     }
 
     printHeader() {
-        console.log('BENVENUTI NEL GIOCO DELLA TOMBOLA!\n')
+        console.log('BENVENUTI NEL GIUOCO DELLA TOMBOLA!\n')
         console.log('----------------------------------\n')
         console.log('Questa è la tua cartella:\n');
         console.log(this.userCard.rows);
