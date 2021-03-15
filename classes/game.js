@@ -41,7 +41,7 @@ class Game {
             if (userComb && this.combinationsLeft.indexOf(userComb) > -1) {
                 this.combinationsLeft.splice(this.combinationsLeft.indexOf(userComb), 1);
                 console.log('>>>>>>>>>>>>>>>>>>>>>>>> Hai fatto ' + userComb)
-                playerAudio.play('ding.wav', function(err){
+                playerAudio.play('./assets/ding.wav', function(err){
                     if (err) throw err
                 })
             }
@@ -49,7 +49,7 @@ class Game {
             if (computerComb && this.combinationsLeft.indexOf(computerComb) > -1) {
                 this.combinationsLeft.splice(this.combinationsLeft.indexOf(computerComb), 1);
                 console.log('!!!!!!!!!!!!!!!!!!!!!!!! Il computer ha fatto ' + computerComb)
-                playerAudio.play('blong.wav', function(err){
+                playerAudio.play('./assets/blong.wav', function(err){
                     if (err) throw err
                 })
             }
