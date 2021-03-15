@@ -10,11 +10,9 @@ class Bingo {
     randomNumber() {
         let number = Math.floor(Math.random() * ((this.max+1) - this.min) + this.min);
         if(this.numbers.indexOf(number) > -1) {
-            this.randomNumber();
-        } else {
-            this.numbers.push(number)
+            return this.randomNumber();
         }
-
+        this.numbers.push(number);
         return number;
     }
 }
