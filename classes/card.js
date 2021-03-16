@@ -21,6 +21,9 @@ class Card extends Bingo {
                 let number = this.randomNumber();
                 this.rows[row].push(number)
             }
+            this.rows[row].sort(function(a, b) {
+                return a - b;
+            });
         }
     }
 
@@ -30,7 +33,7 @@ class Card extends Bingo {
         if (this.numbers.indexOf(lastNumber) > -1) {
             this.numbersChecked.push(lastNumber)
         }
-        if (this.numbersChecked.length == this.numbers.length) return 'tombola';
+        if (this.numbersChecked.length === this.numbers.length) return 'tombola';
 
         for (let number in extractedNumbers) {
             for (let row in this.rows) {
